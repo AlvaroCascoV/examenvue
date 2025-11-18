@@ -2,8 +2,7 @@ import axios from "axios";
 import Global from "@/Global";
 
 export default class ServiceCubos {
-
-
+    //LOGIN
     login(loginInfo) {
         return new Promise(function (resolve) {
             let request = "api/manage/Login"
@@ -14,6 +13,19 @@ export default class ServiceCubos {
         })
     }
 
+    getUsuario() {
+        return new Promise(function (resolve) {
+            let request = "api/Manage/PerfilUsuario"
+            let url = Global.urlApiCubos + request
+            let usuario = {}
+            axios.get(url, { headers: { Authorization: "Bearer " + Global.token } }).then(response => {
+                usuario = response.data
+                resolve(usuario)
+            })
+        })
+    }
+
+    //CUBOS
     getCubos() {
         return new Promise(function (resolve) {
             let request = "api/cubos"
