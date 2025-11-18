@@ -37,6 +37,16 @@ export default class ServiceCubos {
         })
     }
 
+    insertCompra(idCubo) {
+        return new Promise(function (resolve) {
+            let request = "api/Compra/InsertarPedido/" + idCubo
+            let url = Global.urlApiCubos + request
+            axios.post(url, "", { headers: { Authorization: "Bearer " + Global.token } }).then(response => {
+                resolve(response)
+            })
+        })
+    }
+
     //CUBOS
     getCubos() {
         return new Promise(function (resolve) {
