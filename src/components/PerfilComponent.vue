@@ -32,8 +32,8 @@
 <script>
 	import Global from "@/Global";
 	import ServiceCubos from "@/services/ServiceCubos";
-
 	let service = new ServiceCubos();
+
 	export default {
 		name: "PerfilComponent",
 		data() {

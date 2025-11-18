@@ -25,6 +25,18 @@ export default class ServiceCubos {
         })
     }
 
+    getCompras() {
+        return new Promise(function (resolve) {
+            let request = "api/Compra/ComprasUsuario"
+            let url = Global.urlApiCubos + request
+            let usuario = {}
+            axios.get(url, { headers: { Authorization: "Bearer " + Global.token } }).then(response => {
+                usuario = response.data
+                resolve(usuario)
+            })
+        })
+    }
+
     //CUBOS
     getCubos() {
         return new Promise(function (resolve) {
