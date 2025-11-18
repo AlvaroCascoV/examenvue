@@ -46,5 +46,15 @@
 				this.cubosMarca = result;
 			});
 		},
+		watch: {
+			"$route.params.marca"(nextVal, oldVal) {
+				console.log(oldVal + ", " + nextVal);
+				if (nextVal != oldVal) {
+					service.findMarca(this.$route.params.marca).then((result) => {
+						this.cubosMarca = result;
+					});
+				}
+			},
+		},
 	};
 </script>

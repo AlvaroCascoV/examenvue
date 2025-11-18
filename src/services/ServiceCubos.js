@@ -2,6 +2,18 @@ import axios from "axios";
 import Global from "@/Global";
 
 export default class ServiceCubos {
+
+
+    login(loginInfo) {
+        return new Promise(function (resolve) {
+            let request = "api/manage/Login"
+            let url = Global.urlApiCubos + request
+            axios.post(url, loginInfo).then(response => {
+                resolve(response.data)
+            })
+        })
+    }
+
     getCubos() {
         return new Promise(function (resolve) {
             let request = "api/cubos"
