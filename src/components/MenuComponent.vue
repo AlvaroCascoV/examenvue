@@ -67,6 +67,15 @@
 							<li class="nav-item">
 								<router-link class="nav-link" to="/insert">Insert</router-link>
 							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									v-on:click="logout()"
+									style="cursor: pointer"
+								>
+									Logout
+								</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -93,6 +102,11 @@
 				service.getMarcas().then((response) => {
 					this.marcas = response;
 				});
+			},
+			logout() {
+				console.log("logout");
+				service.logout();
+				this.$router.push("/login");
 			},
 		},
 	};

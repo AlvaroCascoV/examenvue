@@ -13,6 +13,10 @@ export default class ServiceCubos {
         })
     }
 
+    logout() {
+        Global.token = ""
+    }
+
     getUsuario() {
         return new Promise(function (resolve) {
             let request = "api/Manage/PerfilUsuario"
