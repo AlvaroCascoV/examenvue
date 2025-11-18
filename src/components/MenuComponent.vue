@@ -83,7 +83,6 @@
 		data() {
 			return {
 				marcas: null,
-				logged: false,
 			};
 		},
 		mounted() {
