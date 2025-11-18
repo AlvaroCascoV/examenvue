@@ -19,18 +19,40 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
 						<router-link class="nav-link active" aria-current="page" to="/">
-							Home
+							Cubos
 						</router-link>
 					</li>
 					<li class="nav-item">
 						<router-link class="nav-link" to="/login">Login</router-link>
 					</li>
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<router-link class="nav-link" to="/perfil">Perfil</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/">Subordinados</router-link>
+						<router-link class="nav-link" to="/compras">Compras</router-link>
 					</li>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/">Insert</router-link>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							Marcas
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li v-for="marca in marcas" :key="marca">
+								<router-link class="dropdown-item" :to="'/cubos/' + marca">
+									{{ marca }}
+								</router-link>
+							</li>
+						</ul>
+					</li> -->
 				</ul>
 			</div>
 		</div>

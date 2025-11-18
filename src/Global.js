@@ -1,5 +1,5 @@
 var Global = {
-    urlApiCubos: 'https://apitiendacubos2023.azurewebsites.net/',
+    urlApiCubos: 'https://apitiendacubos2025a.azurewebsites.net/',
     token: "",
 }
 export default Global
