@@ -25,15 +25,6 @@
 					<li class="nav-item">
 						<router-link class="nav-link" to="/login">Login</router-link>
 					</li>
-					<li class="nav-item">
-						<router-link class="nav-link" to="/perfil">Perfil</router-link>
-					</li>
-					<li class="nav-item">
-						<router-link class="nav-link" to="/compras">Compras</router-link>
-					</li>
-					<li class="nav-item">
-						<router-link class="nav-link" to="/insert">Insert</router-link>
-					</li>
 					<li class="nav-item dropdown">
 						<a
 							class="nav-link dropdown-toggle"
@@ -53,6 +44,31 @@
 							</li>
 						</ul>
 					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							Acciones
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li class="nav-item">
+								<router-link class="nav-link" to="/perfil">Perfil</router-link>
+							</li>
+							<li class="nav-item">
+								<router-link class="nav-link" to="/compras">
+									Compras
+								</router-link>
+							</li>
+							<li class="nav-item">
+								<router-link class="nav-link" to="/insert">Insert</router-link>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -67,6 +83,7 @@
 		data() {
 			return {
 				marcas: null,
+				logged: false,
 			};
 		},
 		mounted() {
