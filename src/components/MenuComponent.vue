@@ -22,10 +22,10 @@
 							Cubos
 						</router-link>
 					</li>
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<router-link class="nav-link" to="/login">Login</router-link>
 					</li>
-					<!-- <li class="nav-item">
+					<li class="nav-item">
 						<router-link class="nav-link" to="/perfil">Perfil</router-link>
 					</li>
 					<li class="nav-item">
@@ -33,7 +33,7 @@
 					</li>
 					<li class="nav-item">
 						<router-link class="nav-link" to="/">Insert</router-link>
-					</li>
+					</li> -->
 					<li class="nav-item dropdown">
 						<a
 							class="nav-link dropdown-toggle"
@@ -52,14 +52,32 @@
 								</router-link>
 							</li>
 						</ul>
-					</li> -->
+					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 </template>
 <script>
+	import ServiceCubos from "@/services/ServiceCubos";
+	const service = new ServiceCubos();
+
 	export default {
 		name: "MenuComponent",
+		data() {
+			return {
+				marcas: null,
+			};
+		},
+		mounted() {
+			this.getMarcas();
+		},
+		methods: {
+			getMarcas() {
+				service.getMarcas().then((response) => {
+					this.marcas = response;
+				});
+			},
+		},
 	};
 </script>

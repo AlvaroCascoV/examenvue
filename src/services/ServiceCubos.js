@@ -16,12 +16,24 @@ export default class ServiceCubos {
 
     getMarcas() {
         return new Promise(function (resolve) {
-            let request = "api/marcas"
+            let request = "api/cubos/marcas"
             let url = Global.urlApiCubos + request
             let marcas = []
             axios.get(url).then(response => {
                 marcas = response.data
                 resolve(marcas)
+            })
+        })
+    }
+
+    findMarca(marca) {
+        return new Promise(function (resolve) {
+            let request = "api/Cubos/CubosMarca/" + marca
+            let url = Global.urlApiCubos + request
+            let cubosMarca = []
+            axios.get(url).then(response => {
+                cubosMarca = response.data
+                resolve(cubosMarca)
             })
         })
     }
